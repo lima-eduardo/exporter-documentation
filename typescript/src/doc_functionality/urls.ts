@@ -104,6 +104,7 @@ export function assetUrl(asset: string, prefix: string | undefined) {
 
 /** Pulsar {{ domain }} variable is returning the URL with the version -> this function removes it from it */
 export function removeVersionFromDomainUrl(url: string) {
+  if (!url) return '/';
   return url.substring(0, url.lastIndexOf('/'));
 }
 
