@@ -25,7 +25,7 @@
                     <div class="dropdown-menu pull-left" aria-labelledby="design-systems-switcher">
                         {[ for dsInfo in dsSwitcher.designSystems ]}
                             {[ let isCurrent = dsInfo.isCurrent /]}
-                            <a class="dropdown-item{{isCurrent ? " is-active": ""}}" href="{{ removeVersionFromDomainUrl(domain) }}/ds-switch/{{ dsInfo.id }}?page_path=/{{ page.relativeUrl }}">
+                            <a class="dropdown-item{{isCurrent ? " is-active": ""}}" href="{{ (domain ? removeVersionFromDomainUrl(domain) : "") }}/ds-switch/{{ dsInfo.id }}?page_path=/{{ page.relativeUrl }}">
                                 {{ dsInfo.name }}
                                 {[ if isCurrent ]}
                                     {[ inject "icon_check" context configuration /]}
